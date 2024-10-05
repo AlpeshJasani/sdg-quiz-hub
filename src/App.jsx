@@ -16,6 +16,7 @@ function App() {
                     <Routes>
                         <Route path='/' element={<HomePage />} />
                         <Route path='/quiz/:sdgNumber' element={<SDGQuizPage />} />
+                        <Route path='*' element={<HomePage />} />
                     </Routes>
                 </main>
                 <Footer /> {/* Footer is now positioned at the bottom */}
