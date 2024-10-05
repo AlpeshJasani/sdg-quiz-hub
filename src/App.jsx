@@ -4,22 +4,21 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import SDGQuizPage from "./pages/SDGQuizPage";
+import NotFoundPage from "./pages/NotFoundPage"; // Create this page
 
 function App() {
     return (
         <Router>
             <div className='flex flex-col min-h-screen'>
-                {/* Make the main div a flex container */}
                 <Header />
                 <main className='flex-grow'>
-                    {/* This will allow the main content to grow and fill available space */}
                     <Routes>
                         <Route path='/' element={<HomePage />} />
                         <Route path='/quiz/:sdgNumber' element={<SDGQuizPage />} />
-                        <Route path='*' element={<HomePage />} />
+                        <Route path='*' element={<NotFoundPage />} /> {/* Handle not found separately */}
                     </Routes>
                 </main>
-                <Footer /> {/* Footer is now positioned at the bottom */}
+                <Footer />
             </div>
         </Router>
     );
